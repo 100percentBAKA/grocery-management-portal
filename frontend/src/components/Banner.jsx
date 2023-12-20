@@ -42,7 +42,7 @@ export default function Banner() {
   return (
     <BannerContainer>
       <ContentWrapper>
-        <CustomH3>
+        <CustomH3 fontSize="2.4rem">
           Fresh And <span style={{ color: "#ff7800" }}>Organic</span> Products
         </CustomH3>
         <CustomContentText>
