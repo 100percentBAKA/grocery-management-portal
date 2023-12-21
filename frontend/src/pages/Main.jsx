@@ -7,6 +7,7 @@ import Banner from "../components/Banner";
 import Features from "../components/Features";
 import { Products } from "../components/Products";
 import Categories from "../components/Categories";
+import Blogs from "../components/Blogs";
 
 //* MUI components imports
 import { Box, styled } from "@mui/material";
@@ -25,6 +26,7 @@ export default function Main() {
         <Features />
         <Products />
         <Categories />
+        <Blogs />
       </MainContainer>
     </div>
   );
