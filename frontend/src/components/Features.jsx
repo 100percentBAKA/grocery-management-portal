@@ -9,6 +9,7 @@ import OutlinedCard from "./OutlinedCard";
 import CustomButton from "./CustomButton";
 import CustomHbox from "./CustomHbox";
 import CustomCardBox from "./CustomCardBox";
+import MainContainer from "./MainContainer";
 
 //* MUI components import
 import { Box, CardActions, CardContent, styled } from "@mui/material";
@@ -33,7 +34,7 @@ const ImageBox = ({ src, alt }) => {
     <img
       src={src}
       alt={alt}
-      style={{ width: "100%", height: "15rem", objectFit: "contain" }}
+      style={{ height: "15rem", objectFit: "contain" }}
     />
   );
 };
@@ -44,44 +45,46 @@ export default function Features() {
       <CustomHbox>
         Our <Highlighter text="Features" />
       </CustomHbox>
-      <CustomCardBox>
-        <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
-          <ImageBox src={fImg1} alt="Feature - 1" />
-          <CustomCardContent>
-            <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
-            <CustomContentText>
-              Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
-            </CustomContentText>
-          </CustomCardContent>
-          <CustomCardActions>
-            <CustomButton buttonText="Read More" />
-          </CustomCardActions>
-        </OutlinedCard>
-        <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
-          <ImageBox src={fImg2} alt="Feature - 2" />
-          <CustomCardContent>
-            <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
-            <CustomContentText>
-              Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
-            </CustomContentText>
-          </CustomCardContent>
-          <CustomCardActions>
-            <CustomButton buttonText="Read More" />
-          </CustomCardActions>
-        </OutlinedCard>
-        <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
-          <ImageBox src={fImg3} alt="Feature - 3" />
-          <CustomCardContent>
-            <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
-            <CustomContentText>
-              Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
-            </CustomContentText>
-          </CustomCardContent>
-          <CustomCardActions>
-            <CustomButton buttonText="Read More" />
-          </CustomCardActions>
-        </OutlinedCard>
-      </CustomCardBox>
+      <MainContainer>
+        <CustomCardBox>
+          <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
+            <ImageBox src={fImg1} alt="Feature - 1" />
+            <CustomCardContent>
+              <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
+              <CustomContentText>
+                Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
+              </CustomContentText>
+            </CustomCardContent>
+            <CustomCardActions>
+              <CustomButton buttonText="Read More" />
+            </CustomCardActions>
+          </OutlinedCard>
+          <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
+            <ImageBox src={fImg2} alt="Feature - 2" />
+            <CustomCardContent>
+              <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
+              <CustomContentText>
+                Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
+              </CustomContentText>
+            </CustomCardContent>
+            <CustomCardActions>
+              <CustomButton buttonText="Read More" />
+            </CustomCardActions>
+          </OutlinedCard>
+          <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
+            <ImageBox src={fImg3} alt="Feature - 3" />
+            <CustomCardContent>
+              <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
+              <CustomContentText>
+                Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
+              </CustomContentText>
+            </CustomCardContent>
+            <CustomCardActions>
+              <CustomButton buttonText="Read More" />
+            </CustomCardActions>
+          </OutlinedCard>
+        </CustomCardBox>
+      </MainContainer>
     </Box>
   );
 }

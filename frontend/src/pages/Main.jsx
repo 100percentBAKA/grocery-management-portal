@@ -5,7 +5,8 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Features from "../components/Features";
-import Products from "../components/Products";
+import { Products } from "../components/Products";
+import Categories from "../components/Categories";
 
 //* MUI components imports
 import { Box, styled } from "@mui/material";
@@ -23,6 +24,7 @@ export default function Main() {
         <Banner />
         <Features />
         <Products />
+        <Categories />
       </MainContainer>
     </div>
   );
