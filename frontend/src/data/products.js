@@ -8,7 +8,7 @@ import pImg6 from "../assets/product-6.png";
 import pImg7 from "../assets/product-7.png";
 import pImg8 from "../assets/product-8.png";
 
-const productsData = [
+const productsData1 = [
     {
         id: 1,
         imgSrc: pImg1,
@@ -36,7 +36,10 @@ const productsData = [
         name: "Fresh Cabbage",
         discount: "$4.99/ -- 10.99/-",
         buttonText: "Add To Cart"
-    },
+    }
+]
+
+const productsData2 = [
     {
         id: 5,
         imgSrc: pImg5,
@@ -67,4 +70,4 @@ const productsData = [
     }
 ]
 
-export default productsData
+export { productsData1, productsData2 }
