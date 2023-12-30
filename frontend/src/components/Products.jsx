@@ -9,6 +9,7 @@ import CustomH3 from "./CustomH3";
 import CustomContentText from "./CustomContentText";
 import FAStars from "./FAStars";
 import CustomButton from "./CustomButton";
+import CustomSubContainer from "./CustomSubContainer";
 
 //* MUI components imports
 import { Box, CardActions, CardContent, styled } from "@mui/material";
@@ -37,83 +38,86 @@ const CustomCardActions = styled(CardActions)(({ theme }) => ({
 
 function Products() {
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <CustomHbox>
         Our <Highlighter text="Products" />
       </CustomHbox>
-      <Swiper
-        loop
-        spaceBetween={20}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        slidesPerView={3}
-        pagination={{ clickable: true }}
-        centeredSlides
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: { slidesPerView: 3 },
-        }}
-        style={{ padding: "1rem" }}
-      >
-        {productsData1.map((product, index) => (
-          <SwiperSlide>
-            <OutlinedCard padding="0.5rem 0.8rem" key={product.id}>
-              <ImageBox src={product.imgSrc} alt={product.name} />
-              <CustomCardContent>
-                <CustomH3 fontSize="1.6rem">{product.name}</CustomH3>
-                <CustomContentText fontSize="1.2rem">
-                  $4.99/ -- 10.99/-
-                </CustomContentText>
-                <FAStars />
-              </CustomCardContent>
-              <CustomCardActions>
-                <CustomButton buttonText={product.buttonText} />
-              </CustomCardActions>
-            </OutlinedCard>
-          </SwiperSlide>
-        ))}
-      </Swiper>
 
-      <Swiper
-        loop
-        spaceBetween={20}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        slidesPerView={3}
-        pagination={{ clickable: true }}
-        centeredSlides
-        breakpoints={{
-          0: {
-            slidesPerView: 1,
-          },
-          768: {
-            slidesPerView: 2,
-          },
-          1024: { slidesPerView: 3 },
-        }}
-        style={{ padding: "1rem" }}
-      >
-        {productsData2.map((product, index) => (
-          <SwiperSlide>
-            <OutlinedCard padding="0.5rem 0.8rem" key={product.id}>
-              <ImageBox src={product.imgSrc} alt={product.name} />
-              <CustomCardContent>
-                <CustomH3 fontSize="1.6rem">{product.name}</CustomH3>
-                <CustomContentText fontSize="1.2rem">
-                  $4.99/ -- 10.99/-
-                </CustomContentText>
-                <FAStars />
-              </CustomCardContent>
-              <CustomCardActions>
-                <CustomButton buttonText={product.buttonText} />
-              </CustomCardActions>
-            </OutlinedCard>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <CustomSubContainer>
+        <Swiper
+          loop
+          spaceBetween={20}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          slidesPerView={3}
+          pagination={{ clickable: true }}
+          centeredSlides
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: { slidesPerView: 3 },
+          }}
+          style={{ padding: "1rem" }}
+        >
+          {productsData1.map((product, index) => (
+            <SwiperSlide>
+              <OutlinedCard padding="0.5rem 0.8rem" key={product.id}>
+                <ImageBox src={product.imgSrc} alt={product.name} />
+                <CustomCardContent>
+                  <CustomH3 fontSize="1.6rem">{product.name}</CustomH3>
+                  <CustomContentText fontSize="1.2rem">
+                    $4.99/ -- 10.99/-
+                  </CustomContentText>
+                  <FAStars />
+                </CustomCardContent>
+                <CustomCardActions>
+                  <CustomButton buttonText={product.buttonText} />
+                </CustomCardActions>
+              </OutlinedCard>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        <Swiper
+          loop
+          spaceBetween={20}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          slidesPerView={3}
+          pagination={{ clickable: true }}
+          centeredSlides
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: { slidesPerView: 3 },
+          }}
+          style={{ padding: "1rem" }}
+        >
+          {productsData2.map((product, index) => (
+            <SwiperSlide>
+              <OutlinedCard padding="0.5rem 0.8rem" key={product.id}>
+                <ImageBox src={product.imgSrc} alt={product.name} />
+                <CustomCardContent>
+                  <CustomH3 fontSize="1.6rem">{product.name}</CustomH3>
+                  <CustomContentText fontSize="1.2rem">
+                    $4.99/ -- 10.99/-
+                  </CustomContentText>
+                  <FAStars />
+                </CustomCardContent>
+                <CustomCardActions>
+                  <CustomButton buttonText={product.buttonText} />
+                </CustomCardActions>
+              </OutlinedCard>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </CustomSubContainer>
     </Box>
   );
 }

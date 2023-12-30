@@ -2,13 +2,13 @@
 import blogData from "../data/blogs";
 
 //* native components import
-import MainContainer from "./MainContainer";
 import CustomHbox from "./CustomHbox";
 import Highlighter from "./Highlighter";
 import CustomCardBox from "./CustomCardBox";
 import ContainedCards from "./ContainedCards";
 import { CustomCardContent } from "./Products";
 import CustomH3 from "./CustomH3";
+import CustomSubContainer from "./CustomSubContainer";
 
 //* font awesome imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -57,7 +57,7 @@ export default function Blogs() {
       <CustomHbox>
         Our <Highlighter text="Blogs" />
       </CustomHbox>
-      <MainContainer>
+      <CustomSubContainer>
         <CustomCardBox>
           {blogData.map((blog) => (
             <ContainedCards maxWidth="300px">
@@ -72,7 +72,7 @@ export default function Blogs() {
                   <CustomTypo>{blog.dateCreated}</CustomTypo>
                 </IconBox>
               </IconCtn>
-              <Divider />\
+              <Divider />
               <CustomCardContent>
                 <CustomH3 fontSize="1.5rem">{blog.title}</CustomH3>
                 <CustomContentText>
@@ -86,7 +86,7 @@ export default function Blogs() {
             </ContainedCards>
           ))}
         </CustomCardBox>
-      </MainContainer>
+      </CustomSubContainer>
     </Box>
   );
 }

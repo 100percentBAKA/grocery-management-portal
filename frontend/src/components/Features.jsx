@@ -1,7 +1,4 @@
-//* images imports
-import fImg1 from "../assets/feature-img-1.png";
-import fImg2 from "../assets/feature-img-2.png";
-import fImg3 from "../assets/feature-img-3.png";
+import featureData from "../data/features";
 
 //* native imports
 import Highlighter from "./Highlighter";
@@ -9,7 +6,7 @@ import OutlinedCard from "./OutlinedCard";
 import CustomButton from "./CustomButton";
 import CustomHbox from "./CustomHbox";
 import CustomCardBox from "./CustomCardBox";
-import MainContainer from "./MainContainer";
+import CustomSubContainer from "./CustomSubContainer";
 
 //* MUI components import
 import { Box, CardActions, CardContent, styled } from "@mui/material";
@@ -30,61 +27,31 @@ const CustomCardActions = styled(CardActions)(({ theme }) => ({
 }));
 
 const ImageBox = ({ src, alt }) => {
-  return (
-    <img
-      src={src}
-      alt={alt}
-      style={{ height: "15rem", objectFit: "contain" }}
-    />
-  );
+  return <img src={src} alt={alt} style={{ objectFit: "contain" }} />;
 };
 
 export default function Features() {
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <CustomHbox>
         Our <Highlighter text="Features" />
       </CustomHbox>
-      <MainContainer>
+      <CustomSubContainer>
         <CustomCardBox>
-          <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
-            <ImageBox src={fImg1} alt="Feature - 1" />
-            <CustomCardContent>
-              <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
-              <CustomContentText>
-                Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
-              </CustomContentText>
-            </CustomCardContent>
-            <CustomCardActions>
-              <CustomButton buttonText="Read More" />
-            </CustomCardActions>
-          </OutlinedCard>
-          <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
-            <ImageBox src={fImg2} alt="Feature - 2" />
-            <CustomCardContent>
-              <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
-              <CustomContentText>
-                Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
-              </CustomContentText>
-            </CustomCardContent>
-            <CustomCardActions>
-              <CustomButton buttonText="Read More" />
-            </CustomCardActions>
-          </OutlinedCard>
-          <OutlinedCard maxWidth={350} padding="2.5rem 1.8rem">
-            <ImageBox src={fImg3} alt="Feature - 3" />
-            <CustomCardContent>
-              <CustomH3 fontSize="1.8rem">Fresh And Organic</CustomH3>
-              <CustomContentText>
-                Lorem Ipsum Dolor Sit Amet Consectetur, Adipisicing Elit, Quis!
-              </CustomContentText>
-            </CustomCardContent>
-            <CustomCardActions>
-              <CustomButton buttonText="Read More" />
-            </CustomCardActions>
-          </OutlinedCard>
+          {featureData.map((feature) => (
+            <OutlinedCard padding="2.5rem 1.8rem">
+              <ImageBox src={feature.imgSrc} alt="Feature - 3" />
+              <CustomCardContent>
+                <CustomH3 fontSize="1.8rem">{feature.featureTitle}</CustomH3>
+                <CustomContentText>{feature.featureDesc}</CustomContentText>
+              </CustomCardContent>
+              <CustomCardActions>
+                <CustomButton buttonText={feature.buttonText} />
+              </CustomCardActions>
+            </OutlinedCard>
+          ))}
         </CustomCardBox>
-      </MainContainer>
+      </CustomSubContainer>
     </Box>
   );
 }

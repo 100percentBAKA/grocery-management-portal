@@ -21,13 +21,11 @@ export default function Main() {
   return (
     <div className="Main">
       <Navbar />
-      <MainContainer>
-        <Banner />
-        <Features />
-        <Products />
-        <Categories />
-        <Blogs />
-      </MainContainer>
+      <Banner />
+      <Features />
+      <Products />
+      <Categories />
+      <Blogs />
     </div>
   );
 }

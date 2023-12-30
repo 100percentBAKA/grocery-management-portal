@@ -23,7 +23,6 @@ const CustomButton = ({ buttonText }) => {
     },
 
     [theme.breakpoints.down("sm")]: {
-      fontSize: "0.8rem",
       paddingLeft: theme.spacing(3),
       paddingRight: theme.spacing(3),
     },

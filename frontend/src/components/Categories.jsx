@@ -2,7 +2,6 @@
 import categoriesData from "../data/categories";
 
 //* native imports
-import MainContainer from "./MainContainer";
 import CustomHbox from "./CustomHbox";
 import Highlighter from "./Highlighter";
 import CustomCardBox from "./CustomCardBox";
@@ -11,6 +10,7 @@ import { CustomCardActions, CustomCardContent } from "./Products";
 import CustomH3 from "./CustomH3";
 import CustomContentText from "./CustomContentText";
 import CustomButton from "./CustomButton";
+import CustomSubContainer from "./CustomSubContainer";
 
 //* MUI components imports
 import { Box } from "@mui/material";
@@ -22,11 +22,11 @@ const ImageBox = ({ src, alt }) => {
 
 export default function Categories() {
   return (
-    <Box>
+    <Box sx={{ width: "100%" }}>
       <CustomHbox>
         Products <Highlighter text="Categories" />
       </CustomHbox>
-      <MainContainer>
+      <CustomSubContainer>
         <CustomCardBox>
           {categoriesData.map((category) => (
             <OutlinedCard padding="0.5rem 0.8rem" key={category.id}>
@@ -43,7 +43,7 @@ export default function Categories() {
             </OutlinedCard>
           ))}
         </CustomCardBox>
-      </MainContainer>
+      </CustomSubContainer>
     </Box>
   );
 }

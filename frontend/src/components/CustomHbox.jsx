@@ -3,7 +3,7 @@ import { Box, styled } from "@mui/material";
 const StyledHBox = styled(Box)(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.secondary.main,
-  fontSize: "2.1rem",
+  fontSize: "2.2rem",
   fontFamily: "Poppins",
   fontWeight: 600,
   margin: "4.5rem 0 3rem 0",
