@@ -3,8 +3,8 @@ import React from "react";
 //* MUI imports
 import { Button, styled } from "@mui/material";
 
-const CustomButton = ({ buttonText }) => {
-  const CustomButton = styled(Button)(({ theme }) => ({
+const CustomButton = ({ buttonText, onClick }) => {
+  const CustomButton = styled(Button)(({ theme, onClick }) => ({
     color: theme.palette.secondary.main,
     textTransform: "none",
     fontSize: "1rem",
@@ -28,7 +28,7 @@ const CustomButton = ({ buttonText }) => {
     },
   }));
 
-  return <CustomButton>{buttonText}</CustomButton>;
+  return <CustomButton onClick={onClick}>{buttonText}</CustomButton>;
 };
 
 export default CustomButton;

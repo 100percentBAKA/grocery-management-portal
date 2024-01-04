@@ -6,6 +6,9 @@ import CustomButton from "./CustomButton";
 import CustomH3 from "./CustomH3";
 import CustomContentText from "./CustomContentText";
 
+//* react scroll
+import { scroller } from "react-scroll";
+
 // * MUI components imports
 import { Box, styled } from "@mui/material";
 
@@ -41,9 +44,21 @@ const ContentWrapper = styled(Box)(({ theme }) => ({
   },
 }));
 
+//* smooth scroller function
+const smoothScroller = (name) => {
+  console.log(name, typeof name);
+  scroller.scrollTo(name, {
+    duration: 600,
+    delay: 100,
+    smooth: true,
+    offset: -100,
+  });
+  console.log("Hello world");
+};
+
 export default function Banner() {
   return (
-    <BannerContainer>
+    <BannerContainer id="Home">
       <ContentWrapper>
         <CustomH3 fontSize="2rem">
           Fresh And <span style={{ color: "#ff7800" }}>Organic</span> Products
@@ -52,7 +67,10 @@ export default function Banner() {
           Lorem Ipsum Dolor Sit, Amet Consectetur Adipisicing Elit. Numquam
           vitae perspiciatis neque soluta.
         </CustomContentText>
-        <CustomButton buttonText="Shop Now" />
+        <CustomButton
+          buttonText="Shop Now"
+          onClick={(e) => smoothScroller("Products")}
+        />
       </ContentWrapper>
     </BannerContainer>
   );

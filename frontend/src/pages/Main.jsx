@@ -9,14 +9,6 @@ import { Products } from "../components/Products";
 import Categories from "../components/Categories";
 import Blogs from "../components/Blogs";
 
-//* MUI components imports
-import { Box, styled } from "@mui/material";
-
-//* styled components
-const MainContainer = styled(Box)(({ theme }) => ({
-  paddingTop: "5rem",
-}));
-
 export default function Main() {
   return (
     <div className="Main">

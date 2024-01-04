@@ -1,6 +1,9 @@
 //* react imports
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
+
+//* react scroll
+import { scroller } from "react-scroll";
 
 //* MUI components import
 import {
@@ -87,7 +90,19 @@ const Logo = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const pages = ["Home", "Features", "Products", "Categories", "Review", "Blogs"];
+//* smooth scrolling function
+const smoothScroller = (name) => {
+  console.log(name, typeof name);
+  scroller.scrollTo(name, {
+    duration: 600,
+    delay: 100,
+    smooth: true,
+    offset: -100,
+  });
+  console.log("Hello world");
+};
+
+const pages = ["Home", "Features", "Products", "Categories", "Blogs"];
 
 const ListComponent = () => (
   <List>
@@ -139,7 +154,9 @@ export default function Navbar() {
 
       <NavbarLinkBox>
         {pages.map((page, index) => (
-          <NavbarLink key={index}>{page}</NavbarLink>
+          <NavbarLink key={index} onClick={(e) => smoothScroller(page)}>
+            {page}
+          </NavbarLink>
         ))}
       </NavbarLinkBox>
 

@@ -22,7 +22,7 @@ const ImageBox = ({ src, alt }) => {
 
 export default function Categories() {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%" }} id="Categories">
       <CustomHbox>
         Products <Highlighter text="Categories" />
       </CustomHbox>

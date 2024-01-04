@@ -53,7 +53,7 @@ const CustomTypo = styled(Typography)(({ theme }) => ({
 
 export default function Blogs() {
   return (
-    <Box sx={{ marginBottom: 10 }}>
+    <Box sx={{ marginBottom: 10 }} id="Blogs">
       <CustomHbox>
         Our <Highlighter text="Blogs" />
       </CustomHbox>

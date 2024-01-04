@@ -38,7 +38,7 @@ const CustomCardActions = styled(CardActions)(({ theme }) => ({
 
 function Products() {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%" }} id="Products">
       <CustomHbox>
         Our <Highlighter text="Products" />
       </CustomHbox>

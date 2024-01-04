@@ -32,7 +32,7 @@ const ImageBox = ({ src, alt }) => {
 
 export default function Features() {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%" }} id="Features">
       <CustomHbox>
         Our <Highlighter text="Features" />
       </CustomHbox>
