@@ -18,8 +18,9 @@ import {
   Toolbar,
   Typography,
   styled,
+  useMediaQuery,
 } from "@mui/material";
-import { useMediaQuery, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 //* MUI icon import
 import StorefrontIcon from "@mui/icons-material/Storefront";
@@ -91,25 +92,28 @@ const Logo = styled(Typography)(({ theme }) => ({
 }));
 
 //* smooth scrolling function
-const smoothScroller = (name) => {
-  console.log(name, typeof name);
+function smoothScroller(name, state) {
+  state(false);
+
   scroller.scrollTo(name, {
     duration: 600,
     delay: 100,
     smooth: true,
     offset: -100,
   });
-  console.log("Hello world");
-};
+}
 
 const pages = ["Home", "Features", "Products", "Categories", "Blogs"];
 
-const ListComponent = () => (
+const ListComponent = ({ setShowMenu }) => (
   <List>
     {pages.map((page, index) => (
       <ListItem key={index}>
         <ListItemButton>
-          <ListItemText primary={page} />
+          <ListItemText
+            primary={page}
+            onClick={(e) => smoothScroller(page, setShowMenu)}
+          />
         </ListItemButton>
       </ListItem>
     ))}
@@ -117,10 +121,10 @@ const ListComponent = () => (
 );
 
 export default function Navbar() {
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
 
   const theme = useTheme();
-  const isViewportSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const isScreenSmaller = useMediaQuery(theme.breakpoints.down("md"));
 
   //! console.log(isViewportSM);
 
@@ -132,29 +136,32 @@ export default function Navbar() {
           edge="start"
           color="inherit"
           aria-label="menu"
-          onClick={(e) => {
-            if (isViewportSM) {
-              setShowMenu(true);
-            }
-          }}
+          onClick={(e) => setShowMenu(true)}
         >
           <StorefrontIcon
             sx={{ color: "#ff7800", fontSize: "35px", cursor: "pointer" }}
           />
         </IconButton>
-        <Drawer
-          anchor="left"
-          open={showMenu}
-          onClose={(e) => setShowMenu(false)}
-        >
-          <ListComponent />
-        </Drawer>
+        {isScreenSmaller ? (
+          <Drawer
+            anchor="left"
+            open={showMenu}
+            onClose={(e) => setShowMenu(false)}
+          >
+            <ListComponent setShowMenu={setShowMenu} />
+          </Drawer>
+        ) : (
+          ""
+        )}
         <Logo>Groco</Logo>
       </Toolbar>
 
       <NavbarLinkBox>
         {pages.map((page, index) => (
-          <NavbarLink key={index} onClick={(e) => smoothScroller(page)}>
+          <NavbarLink
+            key={index}
+            onClick={(e) => smoothScroller(page, setShowMenu)}
+          >
             {page}
           </NavbarLink>
         ))}
